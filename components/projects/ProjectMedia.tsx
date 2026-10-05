@@ -1,0 +1,65 @@
+import Image from "next/image";
+import type { ComponentType } from "react";
+import type { MockupId, ProjectScreen } from "@/data/projects";
+import { ScaledFrame } from "./mockups/ScaledFrame";
+import { PrmsDashboard, PrmsEmployees, PrmsExpenses, PrmsMaterials } from "./mockups/prms";
+import { ClinicDoctor, ClinicLab, ClinicReception } from "./mockups/clinic";
+import { EthirentBrowse, EthirentDetail } from "./mockups/ethirent";
+import { ShopAssistant, ShopProduct } from "./mockups/shop";
+import { CoffeeLots, CoffeeOperations } from "./mockups/coffee";
+import { cn } from "@/lib/utils";
+
+const mockups: Record<MockupId, ComponentType> = {
+  "prms-dashboard": PrmsDashboard,
+  "prms-materials": PrmsMaterials,
+  "prms-employees": PrmsEmployees,
+  "prms-expenses": PrmsExpenses,
+  "clinic-reception": ClinicReception,
+  "clinic-doctor": ClinicDoctor,
+  "clinic-lab": ClinicLab,
+  "ethirent-browse": EthirentBrowse,
+  "ethirent-detail": EthirentDetail,
+  "shop-assistant": ShopAssistant,
+  "shop-product": ShopProduct,
+  "coffee-operations": CoffeeOperations,
+  "coffee-lots": CoffeeLots,
+};
+
+/**
+ * A product screen: a real screenshot when `screen.image` is set, otherwise
+ * the coded interface mockup rendered at native size and scaled to fit.
+ */
+export function ProjectMedia({
+  screen,
+  projectTitle,
+  className,
+  priority = false,
+  sizes = "(min-width: 1280px) 1200px, 100vw",
+}: {
+  screen: ProjectScreen;
+  projectTitle: string;
+  className?: string;
+  priority?: boolean;
+  sizes?: string;
+}) {
+  const label = `${projectTitle} — ${screen.title}. ${screen.caption} Interface shown with fictional demo data.`;
+  const frame = cn(
+    "overflow-hidden rounded-[14px] border border-white/10 bg-ink-900 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.02)] md:rounded-[18px]",
+    className,
+  );
+
+  if (screen.image) {
+    return (
+      <div className={cn(frame, "relative aspect-[16/10]")}>
+        <Image src={screen.image} alt={label} fill sizes={sizes} priority={priority} className="object-cover object-top" />
+      </div>
+    );
+  }
+
+  const Mockup = mockups[screen.mockup];
+  return (
+    <ScaledFrame label={label} className={frame}>
+      <Mockup />
+    </ScaledFrame>
+  );
+}
