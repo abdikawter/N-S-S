@@ -46,7 +46,7 @@ function Pulse() {
 function Typing() {
   return (
     <div className="flex items-center gap-2">
-      <span className="rounded-md bg-white/[0.06] px-2 py-1 text-[0.68rem] text-fg/80">Finding options…</span>
+      <span className="rounded-md bg-contrast/[0.06] px-2 py-1 text-[0.68rem] text-fg/80">Finding options…</span>
       <span className="flex gap-0.5" aria-hidden="true">
         {[0, 1, 2].map((i) => (
           <span
@@ -63,7 +63,7 @@ function Typing() {
 function Tiles() {
   return (
     <div className="grid grid-cols-3 gap-1">
-      {["from-accent/50", "from-teal/40", "from-white/20"].map((c, i) => (
+      {["from-accent/50", "from-teal/40", "from-contrast/20"].map((c, i) => (
         <span key={i} className={cn("h-6 w-8 rounded-md bg-gradient-to-br to-transparent", c)} />
       ))}
     </div>
@@ -140,10 +140,10 @@ function Panel({ p, mx, my, index }: { p: PanelDef; mx: MotionValue<number>; my:
           scale: { duration: 0.8, delay: 0.6 + index * 0.12 },
           y: { duration: 6 + p.float, repeat: Infinity, ease: "easeInOut", delay: p.float },
         }}
-        className="glass flex min-w-[9.5rem] flex-col gap-2.5 rounded-xl px-3.5 py-3 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]"
+        className="glass flex min-w-[9.5rem] flex-col gap-2.5 rounded-xl px-3.5 py-3 shadow-[0_20px_60px_-20px_var(--shadow-color)]"
       >
         <span className="flex items-center gap-2 font-mono text-[0.62rem] uppercase tracking-[0.16em] text-muted">
-          <span className="grid size-5 place-items-center rounded-md bg-white/[0.06] text-accent-soft">{p.icon}</span>
+          <span className="grid size-5 place-items-center rounded-md bg-contrast/[0.06] text-accent-soft">{p.icon}</span>
           {p.label}
         </span>
         {p.body}

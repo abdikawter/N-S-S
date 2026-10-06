@@ -20,7 +20,7 @@ export function TechStack() {
             {technologies.map((tech) => (
               <li
                 key={tech}
-                className="rounded-xl border border-line bg-white/[0.02] px-4 py-2.5 font-mono text-[0.82rem] text-fg/85 transition-colors duration-300 hover:border-line-strong hover:text-fg"
+                className="rounded-xl border border-line bg-contrast/[0.02] px-4 py-2.5 font-mono text-[0.82rem] text-fg/85 transition-colors duration-300 hover:border-line-strong hover:text-fg"
               >
                 {tech}
               </li>

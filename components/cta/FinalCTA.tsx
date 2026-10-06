@@ -17,7 +17,7 @@ export function FinalCTA({
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[radial-gradient(70%_80%_at_50%_100%,rgba(8,11,16,0)_0%,rgba(8,11,16,0.7)_75%)]"
+          className="absolute inset-0 -z-10 cta-scrim"
         />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-grid opacity-50" />
 

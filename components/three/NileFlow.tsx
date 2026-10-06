@@ -107,7 +107,7 @@ export function NileFlow({
           />
         ))}
       </g>
-      <g fill="#cfe0ff">
+      <g style={{ fill: "var(--flow-node)" }}>
         {nodes.map(([x, y], i) => (
           <circle key={i} cx={x} cy={y} r={i % 3 === 0 ? 2.6 : 1.6} opacity={0.75} />
         ))}

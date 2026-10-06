@@ -5,6 +5,7 @@ import { useMotionValue, useReducedMotion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { NileFlow } from "@/components/three/NileFlow";
 import { FloatingPanels } from "./FloatingPanels";
+import { useTheme } from "@/lib/use-theme";
 import { cn } from "@/lib/utils";
 
 // Three.js is code-split and only fetched on capable desktop devices.
@@ -36,6 +37,14 @@ export function HeroVisual({ variant = "full" }: { variant?: "full" | "band" }) 
   const ref = useRef<HTMLDivElement>(null);
   const pointerX = useMotionValue(0);
   const pointerY = useMotionValue(0);
+  // The 3D flow is additive light and disappears on a light background, so the
+  // light theme keeps the SVG flow.
+  const theme = useTheme();
+  const show3D = mode === "3d" && theme === "dark";
+
+  useEffect(() => {
+    if (!show3D) setReady(false);
+  }, [show3D]);
 
   // Decide on 3D only after the page is idle so it never competes with first paint.
   useEffect(() => {
@@ -86,7 +95,7 @@ export function HeroVisual({ variant = "full" }: { variant?: "full" | "band" }) 
         <NileFlow id={`hero-flow-${variant}`} />
       </div>
 
-      {mode === "3d" && (
+      {show3D && (
         <div className={cn("absolute inset-0 transition-opacity duration-[1400ms]", ready ? "opacity-100" : "opacity-0")}>
           <NileScene animate={!reduced} paused={!inView} onReady={() => setReady(true)} />
         </div>

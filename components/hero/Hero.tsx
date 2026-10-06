@@ -26,7 +26,7 @@ export function Hero() {
         {/* Keep the copy legible over the flow. */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[linear-gradient(90deg,#080B10_0%,rgba(8,11,16,0.92)_30%,rgba(8,11,16,0.2)_60%,rgba(8,11,16,0)_100%)]"
+          className="pointer-events-none absolute inset-0 hero-scrim"
         />
         <div
           aria-hidden="true"
@@ -64,7 +64,7 @@ export function Hero() {
           </div>
 
           <p
-            className="rise-in mt-10 inline-flex items-center gap-2.5 rounded-full border border-line bg-white/[0.03] py-1.5 pl-2.5 pr-4 text-[0.82rem] text-muted"
+            className="rise-in mt-10 inline-flex items-center gap-2.5 rounded-full border border-line bg-contrast/[0.03] py-1.5 pl-2.5 pr-4 text-[0.82rem] text-muted"
             style={delay(380)}
           >
             <span className="relative flex size-2" aria-hidden="true">

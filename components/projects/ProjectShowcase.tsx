@@ -27,7 +27,7 @@ export function ProjectShowcase({ project, index }: { project: Project; index: n
             {inDev && <StatusBadge status={project.status} />}
           </div>
           <h3 id={titleId} className="mt-6 text-display-md font-semibold text-fg">
-            <Link href={href} className="transition-colors hover:text-white">
+            <Link href={href} className="transition-colors hover:text-contrast">
               {project.title}
             </Link>
           </h3>

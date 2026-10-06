@@ -19,7 +19,7 @@ export function IndustryCard({ industry }: { industry: Industry }) {
             "radial-gradient(320px circle at var(--spot-x, 50%) var(--spot-y, 50%), rgba(66,133,255,0.12), transparent 70%)",
         }}
       />
-      <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-white/[0.03] text-accent-soft transition-all duration-500 ease-out-expo group-hover:-translate-y-1 group-hover:border-accent/40 group-hover:text-teal">
+      <span className="relative grid size-12 shrink-0 place-items-center rounded-2xl border border-line bg-contrast/[0.03] text-accent-soft transition-all duration-500 ease-out-expo group-hover:-translate-y-1 group-hover:border-accent/40 group-hover:text-teal">
         <Icon name={industry.icon} className="size-5" />
       </span>
       <div className="relative flex flex-1 flex-col">

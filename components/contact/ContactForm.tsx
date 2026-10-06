@@ -21,7 +21,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 const fieldOrder: InquiryField[] = ["name", "company", "email", "phone", "projectType", "budget", "message"];
 
 const inputBase =
-  "w-full rounded-xl border bg-white/[0.025] px-4 text-[0.95rem] text-fg placeholder:text-subtle transition-[border-color,background-color,box-shadow] duration-200 hover:border-line-strong focus:border-accent focus:bg-white/[0.04] focus:outline-none focus:ring-4 focus:ring-accent/15";
+  "w-full rounded-xl border bg-contrast/[0.025] px-4 text-[0.95rem] text-fg placeholder:text-subtle transition-[border-color,background-color,box-shadow] duration-200 hover:border-line-strong focus:border-accent focus:bg-contrast/[0.04] focus:outline-none focus:ring-4 focus:ring-accent/15";
 
 function Field({
   id,
@@ -52,7 +52,7 @@ function Field({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="flex items-center gap-1.5 text-[0.82rem] text-[#FF8A8A]"
+            className="flex items-center gap-1.5 text-[0.82rem] text-danger"
           >
             <AlertCircle aria-hidden="true" className="size-3.5 shrink-0" />
             {error}
@@ -120,7 +120,7 @@ export function ContactForm() {
   }
 
   const describe = (f: InquiryField) => (errors[f] ? `${id(f)}-error` : undefined);
-  const errClass = (f: InquiryField) => (errors[f] ? "border-[#FF8A8A]/60" : "border-line");
+  const errClass = (f: InquiryField) => (errors[f] ? "border-danger/60" : "border-line");
 
   if (status === "success") {
     return (
@@ -163,7 +163,7 @@ export function ContactForm() {
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mb-8 flex items-start gap-3 rounded-xl border border-[#FF8A8A]/30 bg-[#FF8A8A]/[0.07] p-4 text-sm text-[#FFC2C2]"
+            className="mb-8 flex items-start gap-3 rounded-xl border border-danger/30 bg-danger/[0.07] p-4 text-sm text-danger-soft"
           >
             <AlertCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0" />
             <span>{serverError}</span>

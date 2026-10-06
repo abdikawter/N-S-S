@@ -31,7 +31,7 @@ export function AboutSection({ headingLevel = "h2", showLink = true }: { heading
               ))}
             </div>
           </Reveal>
-          <Reveal delay={0.1} className="mt-10 rounded-2xl border border-line bg-white/[0.02] p-6 md:p-8">
+          <Reveal delay={0.1} className="mt-10 rounded-2xl border border-line bg-contrast/[0.02] p-6 md:p-8">
             <p className="eyebrow">Our mission</p>
             <p className="mt-4 font-display text-xl leading-snug tracking-tight text-fg md:text-2xl">{aboutCopy.mission}</p>
           </Reveal>

@@ -19,7 +19,7 @@ export function ProjectFilter({
 }) {
   return (
     <div role="group" aria-label="Filter projects by category" className="-mx-5 overflow-x-auto px-5 [scrollbar-width:none] md:mx-0 md:px-0">
-      <ul className="flex w-max gap-1.5 rounded-full border border-line bg-white/[0.02] p-1.5">
+      <ul className="flex w-max gap-1.5 rounded-full border border-line bg-contrast/[0.02] p-1.5">
         {projectFilters.map((f) => {
           const active = value === f.id;
           const empty = counts[f.id] === 0;

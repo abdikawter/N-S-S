@@ -34,7 +34,7 @@ export function SystemsVisual() {
         </defs>
 
         {[70, 130, 200].map((r, i) => (
-          <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke="rgba(255,255,255,0.06)" strokeDasharray={i === 1 ? "2 6" : undefined} />
+          <circle key={r} cx={cx} cy={cy} r={r} fill="none" className="stroke-line" strokeDasharray={i === 1 ? "2 6" : undefined} />
         ))}
 
         {nodes.map((n, i) => (
@@ -57,7 +57,7 @@ export function SystemsVisual() {
         ))}
 
         <circle cx={cx} cy={cy} r="110" fill="url(#sv-core)" />
-        <circle cx={cx} cy={cy} r="44" fill="#0D121B" stroke="rgba(255,255,255,0.16)" />
+        <circle cx={cx} cy={cy} r="44" className="fill-ink-900 stroke-line-strong" />
         <path
           d={`M${cx - 18},${cy + 8}c8 0 10-22 18-22s10 22 18 22`}
           fill="none"
@@ -65,13 +65,13 @@ export function SystemsVisual() {
           strokeWidth="3"
           strokeLinecap="round"
         />
-        <circle cx={cx} cy={cy - 14} r="3" fill="#F5F7FA" />
+        <circle cx={cx} cy={cy - 14} r="3" className="fill-fg" />
 
         {nodes.map((n) => (
           <g key={`${n.label}-node`}>
-            <rect x={n.x - 46} y={n.y - 17} width="92" height="34" rx="10" fill="#111722" stroke="rgba(255,255,255,0.12)" />
+            <rect x={n.x - 46} y={n.y - 17} width="92" height="34" rx="10" className="fill-ink-850 stroke-line-strong" />
             <circle cx={n.x - 30} cy={n.y} r="3.5" fill="#36D6C5" />
-            <text x={n.x - 20} y={n.y + 4} fontSize="11.5" fill="#C9D2DE" fontFamily="var(--font-geist-sans)">
+            <text x={n.x - 20} y={n.y + 4} fontSize="11.5" className="fill-fg/80" fontFamily="var(--font-geist-sans)">
               {n.label}
             </text>
           </g>

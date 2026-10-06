@@ -20,7 +20,7 @@ export function ServiceCard({ service, index }: { service: Service; index: numbe
         className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-accent/10 opacity-0 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
       />
       <div className="relative flex items-start justify-between gap-6">
-        <span className="grid size-12 place-items-center rounded-2xl border border-line bg-white/[0.03] text-accent-soft">
+        <span className="grid size-12 place-items-center rounded-2xl border border-line bg-contrast/[0.03] text-accent-soft">
           <Icon name={service.icon} className="size-5" />
         </span>
         <span className="font-mono text-sm text-subtle">{pad(index + 1)}</span>

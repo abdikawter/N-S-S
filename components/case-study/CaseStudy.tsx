@@ -163,7 +163,7 @@ export function CaseStudy({ project }: { project: Project }) {
           <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {project.features.map((f, i) => (
               <Reveal as="li" key={f.title} delay={(i % 3) * 0.05} className="group surface rounded-2xl p-7 transition-colors duration-500 hover:border-line-strong md:p-8">
-                <span className="grid size-11 place-items-center rounded-xl border border-line bg-white/[0.03] text-accent-soft transition-colors duration-500 group-hover:text-teal">
+                <span className="grid size-11 place-items-center rounded-xl border border-line bg-contrast/[0.03] text-accent-soft transition-colors duration-500 group-hover:text-teal">
                   <Icon name={f.icon} className="size-5" />
                 </span>
                 <h3 className="mt-6 font-display text-lg font-semibold tracking-tight">{f.title}</h3>
@@ -213,7 +213,7 @@ export function CaseStudy({ project }: { project: Project }) {
             <h2 className="mt-6 font-display text-2xl font-semibold tracking-tight md:text-3xl">Stack</h2>
             <ul className="mt-8 flex flex-wrap gap-2">
               {project.technologies.map((t) => (
-                <li key={t} className="rounded-lg border border-line bg-white/[0.02] px-3 py-2 font-mono text-[0.8rem] text-fg/85">
+                <li key={t} className="rounded-lg border border-line bg-contrast/[0.02] px-3 py-2 font-mono text-[0.8rem] text-fg/85">
                   {t}
                 </li>
               ))}

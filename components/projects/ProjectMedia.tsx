@@ -44,7 +44,7 @@ export function ProjectMedia({
 }) {
   const label = `${projectTitle} — ${screen.title}. ${screen.caption} Interface shown with fictional demo data.`;
   const frame = cn(
-    "overflow-hidden rounded-[14px] border border-white/10 bg-ink-900 shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9),0_0_0_1px_rgba(255,255,255,0.02)] md:rounded-[18px]",
+    "overflow-hidden rounded-[14px] border border-line-strong bg-ink-900 shadow-[0_40px_120px_-40px_var(--shadow-color)] md:rounded-[18px]",
     className,
   );
 

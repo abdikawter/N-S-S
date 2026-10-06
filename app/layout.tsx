@@ -6,6 +6,7 @@ import { Navbar } from "@/components/navigation/Navbar";
 import { Footer } from "@/components/footer/Footer";
 import { MotionProvider } from "@/components/layout/MotionProvider";
 import { site } from "@/data/site";
+import { DEFAULT_THEME, themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const sora = localFont({
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#080B10",
-  colorScheme: "dark",
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -58,8 +59,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${sora.variable}`}
+      data-theme={DEFAULT_THEME}
       suppressHydrationWarning
     >
+      <head>
+        {/* Applies the saved theme before first paint (no flash of the wrong theme). */}
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-dvh overflow-x-clip">
         <a
           href="#main"

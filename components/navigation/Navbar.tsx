@@ -9,6 +9,7 @@ import { navigation } from "@/data/site";
 import { Logo } from "@/components/ui/Logo";
 import { ButtonLink } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 function isActive(pathname: string, href: string) {
   return pathname === href || pathname.startsWith(`${href}/`);
@@ -81,7 +82,7 @@ export function Navbar() {
                     {active && (
                       <motion.span
                         layoutId="nav-active"
-                        className="absolute inset-0 -z-10 rounded-full bg-white/[0.06]"
+                        className="absolute inset-0 -z-10 rounded-full bg-contrast/[0.06]"
                         transition={{ type: "spring", bounce: 0.18, duration: 0.5 }}
                       />
                     )}
@@ -96,10 +97,11 @@ export function Navbar() {
             <ButtonLink href="/contact" arrow className="hidden h-10 px-4 text-[0.85rem] sm:inline-flex">
               Start a Project
             </ButtonLink>
+            <ThemeToggle />
             <button
               ref={toggleRef}
               type="button"
-              className="relative grid size-11 place-items-center rounded-full border border-line bg-white/[0.03] lg:hidden"
+              className="relative grid size-11 place-items-center rounded-full border border-line bg-contrast/[0.03] lg:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Close menu" : "Open menu"}
