@@ -67,7 +67,8 @@
 /* -------------------------------------------------------------------------- */
 
 /*
- * Dark is the default. `data-theme` is set on <html> by the inline script in
+ * Light is the default (set on <html> in app/layout.tsx); the dark values here
+ * are the base tokens. `data-theme` is updated by the inline script in
  * app/layout.tsx (before first paint) and by the toggle in the navbar.
  */
 :root {

@@ -1,10 +1,10 @@
 export type Theme = "dark" | "light";
 
 export const THEME_STORAGE_KEY = "theme";
-export const DEFAULT_THEME: Theme = "dark";
+export const DEFAULT_THEME: Theme = "light";
 
 /**
- * Runs in <head> before first paint so a saved light theme never flashes dark.
+ * Runs in <head> before first paint so a saved theme never flashes the default.
  * Keep in sync with `readStoredTheme`.
  */
 export const themeInitScript = `(function(){try{var t=localStorage.getItem("${THEME_STORAGE_KEY}");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t)}catch(e){}})()`;
