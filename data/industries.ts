@@ -34,9 +34,9 @@ export const industries: Industry[] = [
   {
     id: "retail",
     name: "Retail & E-commerce",
-    description: "Online stores, AI shopping experiences and inventory tools.",
+    description: "Online and social commerce, multi-branch sales and inventory tools.",
     icon: "shopping-bag",
-    project: "ai-shopping-agent",
+    project: "storefront-et",
   },
   {
     id: "transportation",
@@ -53,14 +53,15 @@ export const industries: Industry[] = [
   {
     id: "enterprise",
     name: "Business & Enterprise",
-    description: "Internal tools, workflow automation and reporting.",
+    description: "ERP systems, internal tools, workflow automation and reporting.",
     icon: "building",
+    project: "furniture-erp",
   },
   {
     id: "startups",
     name: "Startups & Digital Products",
     description: "MVPs, SaaS products and marketplaces ready to scale.",
     icon: "rocket",
-    project: "ethirent",
+    project: "storefront-et",
   },
 ];

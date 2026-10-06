@@ -36,10 +36,11 @@ export type MockupId =
   | "clinic-reception"
   | "clinic-doctor"
   | "clinic-lab"
-  | "ethirent-browse"
-  | "ethirent-detail"
-  | "shop-assistant"
-  | "shop-product"
+  | "erp-storekeeper"
+  | "erp-stock"
+  | "erp-sale"
+  | "storefront-flow"
+  | "storefront-owner"
   | "coffee-operations"
   | "coffee-lots";
 
@@ -216,107 +217,116 @@ export const projects: Project[] = [
     ctaLabel: "View Case Study",
   },
   {
-    slug: "ethirent",
-    title: "ETHIRENT",
-    fullTitle: "Equipment Rental Marketplace",
-    category: "Marketplace / Rental Platform",
-    description: "A digital marketplace for discovering and renting office and home equipment.",
+    slug: "furniture-erp",
+    title: "Furniture ERP",
+    fullTitle: "Furniture ERP System",
+    category: "Business Management / ERP",
+    description:
+      "An ERP system for a multi-branch furniture business, connecting showrooms and the central warehouse through stock requests, transfers, sales, customer credit and payments.",
     status: "delivered",
-    filters: ["marketplaces"],
-    tags: ["Marketplace", "Rentals", "Booking"],
-    // PLACEHOLDER — confirm the stack used for ETHIRENT.
-    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL"],
+    filters: ["business"],
+    tags: ["ERP", "Multi-branch Inventory", "Sales & Credit"],
+    // PLACEHOLDER — confirm the stack used for the Furniture ERP.
+    technologies: ["React", "TypeScript", "Django", "PostgreSQL", "REST APIs"],
     image: {
-      mockup: "ethirent-browse",
-      title: "Browse & search",
-      caption: "Location-aware search across rental categories.",
+      mockup: "erp-storekeeper",
+      title: "Storekeeper home",
+      caption: "Stock requests from the branches, low stock and goods in transit.",
     },
     gallery: [
       {
-        mockup: "ethirent-browse",
-        title: "Discovery",
-        caption: "Search, categories and listings designed for quick comparison.",
+        mockup: "erp-storekeeper",
+        title: "Warehouse requests",
+        caption: "The storekeeper acknowledges, releases or rejects stock requests from each branch.",
       },
       {
-        mockup: "ethirent-detail",
-        title: "Listing & booking",
-        caption: "Clear rental pricing, availability and pickup location before booking.",
+        mockup: "erp-stock",
+        title: "Stock across all locations",
+        caption: "Every product by branch, warehouse and in transit, with reserved quantities and minimums.",
+      },
+      {
+        mockup: "erp-sale",
+        title: "New sale",
+        caption: "Branch sales that draw on warehouse stock, with receipts, partial payment and credit limits.",
       },
     ],
     challenge: [
-      "Finding office or home equipment to rent often depends on word of mouth, phone calls and scattered social media posts, with little clarity on price, availability or location.",
-      "Owners with equipment to rent have no simple way to reach customers or manage bookings.",
+      "A furniture business that sells from several showrooms and keeps most of its stock in a central warehouse depends on constant coordination: which branch has what, what has been requested, what is on the truck, and what each customer still owes.",
+      "When requests travel by phone and stock is counted on paper, sales staff promise items that are not available, transfers go unrecorded and managers cannot see stock or credit across the business.",
     ],
     solution: [
-      "ETHIRENT is a marketplace that brings rental listings into one searchable place. Customers can browse categories, compare rental prices and book equipment for the dates they need.",
-      "Each listing presents pricing, availability and location clearly, making renting as straightforward as buying online.",
+      "The Furniture ERP connects showrooms, the warehouse and the office in one system. Salespeople create sales against live stock at every location; lines that need warehouse stock automatically become stock requests the storekeeper can acknowledge and release, to the branch or for customer pickup.",
+      "Every movement is a numbered document — sale, stock request, release, transfer, receipt, adjustment — so stock, customer credit and payments always reconcile, and each role sees only the actions it is allowed to take.",
     ],
     features: [
-      { title: "Search & Discovery", description: "Keyword and location search across listings.", icon: "search" },
-      { title: "Categories", description: "Office, electronics, furniture, events and more.", icon: "layers" },
-      { title: "Rental Pricing", description: "Daily, weekly and monthly rates at a glance.", icon: "receipt" },
-      { title: "Booking", description: "Date selection and booking requests.", icon: "calendar" },
-      { title: "Location", description: "Pickup areas shown on every listing.", icon: "map-pin" },
-      { title: "User Accounts", description: "Profiles for renters and equipment owners.", icon: "users" },
+      { title: "Multi-location Stock", description: "Stock by branch, warehouse and in transit, with minimum levels.", icon: "boxes" },
+      { title: "Stock Requests & Releases", description: "Branches request; the warehouse acknowledges and releases in full or in part.", icon: "workflow" },
+      { title: "Transfers", description: "Goods in transit tracked until the receiving branch confirms.", icon: "truck" },
+      { title: "Sales & Receipts", description: "Walk-in and phone sales, official receipts and drafts.", icon: "receipt" },
+      { title: "Customer Credit", description: "Outstanding balances and credit limits checked at every sale.", icon: "credit-card" },
+      { title: "Payments", description: "Payments recorded against sales and verified by accounts.", icon: "file-text" },
+      { title: "Role-Based Access", description: "Storekeepers, salespeople and accountants each see their own work.", icon: "shield" },
+      { title: "Audit History", description: "Every document keeps a full history of who did what and when.", icon: "clipboard" },
     ],
     outcome: [
-      { title: "One Marketplace", description: "Rental listings gathered in a single searchable platform." },
-      { title: "Transparent Pricing", description: "Customers see rates and availability before they ask." },
-      { title: "Simpler Booking", description: "A guided flow from discovery to rental request." },
-      { title: "New Channel for Owners", description: "Equipment owners can reach customers online." },
+      { title: "One View of Stock", description: "Every branch and the warehouse in a single, current picture." },
+      { title: "Coordinated Branches", description: "Requests, releases and transfers replace phone calls and paper." },
+      { title: "Controlled Credit", description: "Customer balances and limits visible before a sale is confirmed." },
+      { title: "Traceable Documents", description: "Numbered records for every sale, movement and payment." },
     ],
     ctaLabel: "View Case Study",
   },
   {
-    slug: "ai-shopping-agent",
-    title: "AI Shopping Agent",
-    fullTitle: "AI Shopping Agent",
-    category: "AI / E-commerce",
+    slug: "storefront-et",
+    title: "StoreFront.et",
+    fullTitle: "AI-Assisted Telegram Commerce Platform",
+    category: "AI / Social Commerce",
     description:
-      "An AI-powered clothing shopping experience that helps customers discover products and interact with an intelligent shopping assistant.",
+      "A platform that lets Ethiopian shops sell straight from their Telegram channel: customers order through the shop’s own AI-assisted bot in Amharic or English, staff confirm orders in their group, and stock updates itself.",
     status: "delivered",
     filters: ["ai", "marketplaces"],
-    tags: ["AI Agent", "E-commerce", "Recommendations"],
+    tags: ["AI Bot", "Telegram Commerce", "SaaS"],
     // PLACEHOLDER — confirm the stack and AI provider used.
-    technologies: ["Next.js", "TypeScript", "Python", "AI Integrations"],
+    technologies: ["Python", "Node.js", "PostgreSQL", "Telegram Bot API", "AI Integrations"],
     image: {
-      mockup: "shop-assistant",
-      title: "Assistant-led shopping",
-      caption: "The assistant filters, compares and recommends inside the catalogue.",
+      mockup: "storefront-flow",
+      title: "Order flow",
+      caption: "From a channel post to a confirmed order in the staff group.",
     },
     gallery: [
       {
-        mockup: "shop-assistant",
-        title: "Shopping with the assistant",
-        caption: "Natural-language requests become filters and curated recommendations.",
+        mockup: "storefront-flow",
+        title: "Channel, bot and staff group",
+        caption: "Customers tap Order on a post, the bot takes the order, and staff confirm it in their group.",
       },
       {
-        mockup: "shop-product",
-        title: "Product detail & cart",
-        caption: "The assistant suggests pairings and sizes alongside the product and cart.",
+        mockup: "storefront-owner",
+        title: "The owner’s view",
+        caption: "Sales by channel, best sellers, discounts by staff, and stock by colour and size.",
       },
     ],
     challenge: [
-      "Online clothing stores often leave customers scrolling through long catalogues and juggling filters to find something that fits their style, occasion and budget.",
-      "Generic chatbots bolted onto a store rarely understand the catalogue, so they cannot actually help a customer decide.",
+      "Many Ethiopian shops sell through Telegram channels, but every order is handled by hand: the same price and size questions all day, messages that arrive at night and go unanswered, and a channel that says “available” when the shelf is empty.",
+      "Sales made in the physical shop are invisible next to Telegram orders, so owners cannot see what sold, who sold it, or what discounts were given.",
     ],
     solution: [
-      "The AI Shopping Agent is built into the shopping experience itself. Customers describe what they need in their own words, and the assistant translates that into filters, recommendations and outfit suggestions drawn from the real catalogue.",
-      "Recommendations, product details and the cart work together, so the assistant feels like a knowledgeable stylist rather than a separate chat window.",
+      "StoreFront.et gives each shop its own bot connected to its channel and staff group. Customers tap Order on a post and choose colour, size, delivery and payment with buttons; AI helps the bot understand messages written in their own words, while prices, stock and payments always come from the shop.",
+      "Orders arrive in the staff group ready to confirm, in-shop sales are recorded from the phone, and every sale updates stock and the channel post — showing SOLD OUT automatically. The owner gets a dashboard inside Telegram, with nothing to install.",
     ],
     features: [
-      { title: "Integrated AI Assistant", description: "Conversational shopping inside the catalogue.", icon: "sparkles" },
-      { title: "Smart Filtering", description: "Requests turned into precise product filters.", icon: "filter" },
-      { title: "Recommendations", description: "Suggestions based on style, occasion and budget.", icon: "brain" },
-      { title: "Product Details", description: "Sizes, materials and pairing suggestions.", icon: "eye" },
-      { title: "Shopping Cart", description: "A cart the assistant can reason about.", icon: "shopping-cart" },
-      { title: "Product Discovery", description: "Browse and compare with less effort.", icon: "shopping-bag" },
+      { title: "Order from the Channel", description: "Customers order from a post with buttons, no app to install.", icon: "shopping-cart" },
+      { title: "AI-Assisted Bot", description: "Understands Amharic and English in the customer’s own words.", icon: "bot" },
+      { title: "Staff Group Orders", description: "Orders and payment screenshots land in the staff group to confirm.", icon: "users" },
+      { title: "Self-Updating Stock", description: "Every sale updates stock by colour and size, and the channel post.", icon: "boxes" },
+      { title: "In-Shop Sales", description: "Walk-in sales recorded from the phone, with discount limits.", icon: "store" },
+      { title: "Owner Dashboard", description: "Sales, best sellers and discounts by staff, inside Telegram.", icon: "chart" },
+      { title: "Human Handover", description: "Bargaining, complaints or unclear requests go to a person.", icon: "message" },
     ],
     outcome: [
-      { title: "Guided Discovery", description: "Customers reach relevant products faster." },
-      { title: "Catalogue-Aware AI", description: "Answers grounded in real products and stock." },
-      { title: "Personal Experience", description: "Recommendations shaped by each customer’s needs." },
-      { title: "Reusable AI Foundation", description: "An agent pattern that extends to other retail use cases." },
+      { title: "Open Around the Clock", description: "Orders taken any time, without staff answering every message." },
+      { title: "Accurate Availability", description: "Customers only see what is really in stock." },
+      { title: "One Record of Sales", description: "Telegram and in-shop sales tracked together." },
+      { title: "AI with Guardrails", description: "Helpful automation, with prices and payments controlled by the shop." },
     ],
     ctaLabel: "View Case Study",
   },
@@ -327,10 +337,10 @@ export const projects: Project[] = [
     category: "Agriculture / Operations",
     description:
       "A digital operations platform designed to manage coffee washing station workflows, production activities, resources, and operational data.",
-    status: "in-development",
+    status: "delivered",
     filters: ["agriculture", "business"],
     tags: ["Agriculture", "Operations", "Traceability"],
-    // PLACEHOLDER — confirm the planned stack.
+    // PLACEHOLDER — confirm the stack used for the washing station system.
     technologies: ["React", "TypeScript", "Django", "PostgreSQL"],
     image: {
       mockup: "coffee-operations",
@@ -354,8 +364,8 @@ export const projects: Project[] = [
       "Tracking this on paper makes it hard to follow each lot through processing, understand production, and report accurately.",
     ],
     solution: [
-      "This platform, currently in development, is designed to digitise station workflows from cherry intake through processing to parchment inventory.",
-      "It aims to give station managers structured, real-time operational data on production, resources and staff, with reports built on the same records.",
+      "The platform digitises station workflows from cherry intake through processing to parchment inventory, so every lot can be followed from the farmer to the warehouse.",
+      "Station managers get structured, real-time operational data on production, resources and staff, with reports built on the same records.",
     ],
     features: [
       { title: "Coffee Intake", description: "Record cherry deliveries by farmer, weight and grade.", icon: "coffee" },
@@ -366,12 +376,12 @@ export const projects: Project[] = [
       { title: "Reports", description: "Operational statistics and reporting.", icon: "file-text" },
     ],
     outcome: [
-      { title: "Lot Traceability", description: "Planned: follow each lot through every stage." },
-      { title: "Digital Station Records", description: "Planned: replace paper logs with structured data." },
-      { title: "Production Visibility", description: "Planned: clear view of seasonal output." },
-      { title: "Reliable Reporting", description: "Planned: reports generated from operational data." },
+      { title: "Lot Traceability", description: "Each lot followed through every processing stage." },
+      { title: "Digital Station Records", description: "Paper logs replaced with structured, searchable records." },
+      { title: "Production Visibility", description: "A clear view of output across the season." },
+      { title: "Reliable Reporting", description: "Reports generated directly from operational data." },
     ],
-    ctaLabel: "Explore Project",
+    ctaLabel: "View Case Study",
   },
 ];
 

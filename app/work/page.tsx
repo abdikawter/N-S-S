@@ -8,7 +8,7 @@ import { FinalCTA } from "@/components/cta/FinalCTA";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Software products and business systems built by Nile Software Solutions — from operations platforms and clinic workflows to marketplaces and AI shopping agents.",
+    "Software products and business systems built by Nile Software Solutions — from operations platforms, ERP and clinic workflows to AI-assisted Telegram commerce.",
   alternates: { canonical: "/work" },
   openGraph: { title: "Work — Nile Software Solutions", url: "/work" },
 };

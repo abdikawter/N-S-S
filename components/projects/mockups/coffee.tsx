@@ -25,6 +25,7 @@ import {
   Sidebar,
   Table,
   Topbar,
+  UserChip,
   themes,
   type NavEntry,
 } from "./kit";
@@ -45,16 +46,15 @@ const nav = (active: string): NavEntry[] =>
 
 function Shell({ active, title, subtitle, children }: { active: string; title: string; subtitle: string; children: React.ReactNode }) {
   return (
-    <AppWindow theme={t} url="station.app / preview">
+    <AppWindow theme={t} url="station.app / operations">
       <div className="flex h-full">
         <Sidebar
           brand={<Coffee className="size-4" />}
           brandSub="Washing Station"
           items={nav(active)}
           footer={
-            <div className="rounded-lg border border-dashed border-[var(--m-accent)]/40 p-3 text-[11px] leading-snug text-[var(--m-muted)]">
-              <div className="mb-1 font-semibold text-[var(--m-accent)]">In development</div>
-              Preview build with sample data.
+            <div className="rounded-lg border border-[var(--m-border)] bg-[var(--m-surface2)] p-3">
+              <UserChip initials="TG" name="Tesfaye G." role="Station manager" />
             </div>
           }
         />

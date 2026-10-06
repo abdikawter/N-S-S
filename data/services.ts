@@ -18,7 +18,7 @@ export const services: Service[] = [
       "Custom platforms that bring your operations into one structured system, replacing spreadsheets and paperwork with clear, reliable workflows.",
     icon: "layout-dashboard",
     items: ["Operations", "Finance", "Inventory", "Employees", "Workflows", "Reporting"],
-    proof: ["prms", "clinic-management", "coffee-washing-station"],
+    proof: ["prms", "furniture-erp", "clinic-management", "coffee-washing-station"],
   },
   {
     id: "ai-applications",
@@ -34,7 +34,7 @@ export const services: Service[] = [
       "AI Automation",
       "Intelligent Business Workflows",
     ],
-    proof: ["ai-shopping-agent"],
+    proof: ["storefront-et"],
   },
   {
     id: "web-platforms",
@@ -42,8 +42,8 @@ export const services: Service[] = [
     summary:
       "Customer-facing platforms designed for growth, from multi-sided marketplaces to SaaS products and self-service portals.",
     icon: "globe",
-    items: ["Marketplaces", "Rental Platforms", "E-commerce", "Customer Portals", "SaaS Products"],
-    proof: ["ethirent", "ai-shopping-agent"],
+    items: ["Marketplaces", "Rental Platforms", "E-commerce", "Social & Telegram Commerce", "Customer Portals", "SaaS Products"],
+    proof: ["storefront-et"],
   },
   {
     id: "custom-software",

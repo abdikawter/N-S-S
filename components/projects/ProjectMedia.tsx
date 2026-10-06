@@ -4,8 +4,8 @@ import type { MockupId, ProjectScreen } from "@/data/projects";
 import { ScaledFrame } from "./mockups/ScaledFrame";
 import { PrmsDashboard, PrmsEmployees, PrmsExpenses, PrmsMaterials } from "./mockups/prms";
 import { ClinicDoctor, ClinicLab, ClinicReception } from "./mockups/clinic";
-import { EthirentBrowse, EthirentDetail } from "./mockups/ethirent";
-import { ShopAssistant, ShopProduct } from "./mockups/shop";
+import { ErpNewSale, ErpStockMatrix, ErpStorekeeper } from "./mockups/furniture-erp";
+import { StorefrontFlow, StorefrontOwner } from "./mockups/storefront";
 import { CoffeeLots, CoffeeOperations } from "./mockups/coffee";
 import { cn } from "@/lib/utils";
 
@@ -17,10 +17,11 @@ const mockups: Record<MockupId, ComponentType> = {
   "clinic-reception": ClinicReception,
   "clinic-doctor": ClinicDoctor,
   "clinic-lab": ClinicLab,
-  "ethirent-browse": EthirentBrowse,
-  "ethirent-detail": EthirentDetail,
-  "shop-assistant": ShopAssistant,
-  "shop-product": ShopProduct,
+  "erp-storekeeper": ErpStorekeeper,
+  "erp-stock": ErpStockMatrix,
+  "erp-sale": ErpNewSale,
+  "storefront-flow": StorefrontFlow,
+  "storefront-owner": StorefrontOwner,
   "coffee-operations": CoffeeOperations,
   "coffee-lots": CoffeeLots,
 };
