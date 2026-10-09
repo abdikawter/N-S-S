@@ -18,7 +18,7 @@ export function ServicesSection({ headingLevel = "h2" }: { headingLevel?: "h1" |
               What We Build
             </H>
             <p className="mt-6 max-w-sm text-lg leading-relaxed text-muted">
-              Four areas of focus, one approach: understand the business first, then design and engineer software that fits it.
+              Four areas of focus, one approach: understand the business first, then design and engineer software that fits it — and your budget. Quality software shouldn&apos;t be out of reach for small and growing businesses.
             </p>
             <ButtonLink href="/contact" variant="secondary" arrow className="mt-8">
               Discuss your project

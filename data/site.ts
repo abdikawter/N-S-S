@@ -8,7 +8,7 @@ export const site = {
   tagline: "Software that solves real business problems.",
   headline: "We Build Software for Businesses Ready to Grow.",
   description:
-    "From business management systems to AI-powered platforms, we design and build digital solutions that solve real business problems.",
+    "From business management systems to AI-powered platforms, we design and build digital solutions that solve real business problems — at prices that work for growing businesses.",
   // PLACEHOLDER — replace with the production domain before launch (also set NEXT_PUBLIC_SITE_URL).
   url: "https://nilesoftware.example",
   locale: "en_US",

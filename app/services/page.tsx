@@ -20,7 +20,7 @@ export default function ServicesPage() {
       <PageHeader
         eyebrow="Services"
         title="Software designed around how your business works."
-        description="We design and build business systems, AI applications and digital platforms — from the first workshop to a production system your team relies on."
+        description="We design and build business systems, AI applications and digital platforms — from the first workshop to a production system your team relies on, with affordable, transparent pricing."
       >
         <ButtonLink href="/contact" size="lg" arrow>
           Start a Project
